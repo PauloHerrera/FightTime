@@ -1,0 +1,25 @@
+﻿@using FightTime.Model
+@model FightTime.Models.LutadorViewModel
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h2>Criar Lutador</h2>
+
+@using (Html.BeginForm()){
+    @Html.LabelFor(m => m.Nome)
+    @Html.TextBoxFor(m => m.Nome)
+
+    @Html.LabelFor(m => m.Apelido)
+    @Html.TextBoxFor(m => m.Apelido)
+
+    <select class="select_styled input-xmedium" id="TipoEmissora" name="TipoEmissora">
+        <option title="Selecione" value="">Selecione</option>
+        @foreach (var tipoCanal in new SelectList(Enum.GetValues(typeof(ClasseLutador))))
+        {
+            <option value="@tipoCanal.Text" @(ViewBag.TipoMenuSel == tipoCanal.Text ? "selected='selected'" : "") >@tipoCanal.Text</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-primary" id="salvarLutador">Salvar</button>
+}

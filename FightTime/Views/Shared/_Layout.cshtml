@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/public/styles/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+</head>
+    <body>
+        <p>@Html.ActionLink("Log Off", "LogOff", "Account")</p>
+        @RenderBody()
+    
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/public")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

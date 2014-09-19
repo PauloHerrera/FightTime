@@ -1,0 +1,18 @@
+﻿@model FightTime.Models.LutadorViewModel
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h2><small>@Model.Nome - </small>@Model.Apelido </h2>
+
+<h3>Atributos:</h3>
+
+<h4>Força: <small>@Model.Forca</small></h4>
+<h4>Agilidade: <small>@Model.Agilidade</small></h4>
+<h4>Velocidade: <small>@Model.Velocidade</small></h4>
+
+
+<button type="button" class="btn btn-primary"  id="">TREINO</button>
+<button type="button" class="btn btn-primary"  id="">MISSÃO</button>
+<button type="button" class="btn btn-primary" id="">TORNEIO</button>

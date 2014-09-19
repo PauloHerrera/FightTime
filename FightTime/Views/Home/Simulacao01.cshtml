@@ -1,0 +1,38 @@
+﻿@model FightTime.Models.ControleDeLutaViewModel
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/controleluta")
+
+    <script>
+
+        AddLutador("@Model.Lutador1.LutadorId","@Model.Lutador1.Nome","@Model.Lutador1.Apelido","@Model.Lutador1.Saude","@Model.Lutador1.Velocidade","@Model.Lutador1.Agilidade","@Model.Lutador1.Forca");
+        AddLutador("@Model.Lutador2.LutadorId","@Model.Lutador2.Nome","@Model.Lutador2.Apelido","@Model.Lutador2.Saude","@Model.Lutador2.Velocidade","@Model.Lutador2.Agilidade","@Model.Lutador2.Forca");
+    </script>
+}
+
+<div class="container">
+    <h2>SIMULAÇÃO DE LUTA 01</h2>
+    <input type="hidden" id="teste" value="@Model.Lutador1.Saude">
+    <div class="row">
+        <div class="col-md-6">
+            @Html.Partial("_DadosLutador", Model.Lutador1)
+        </div>
+
+        <div class="col-md-6">
+            @Html.Partial("_DadosLutador", Model.Lutador2)
+        </div>
+    
+        <button type="button" class="btn btn-primary" style="margin-left: 30%" id="simulaLuta">INICIAR SIMULAÇÃO DE LUTA</button>
+        <button type="button" class="btn btn-success" disabled="disabled" id="iniciaTurno">Avançar Turno</button>
+        <div class="col-md-8">
+            <ul id="mensagensDaLuta">
+                
+            </ul>
+        </div>
+    </div>
+</div>

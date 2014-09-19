@@ -1,0 +1,21 @@
+﻿@model dynamic
+
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    <p>Login</p>
+    <input type="text" name="Usuario" />
+    
+    <p>Senha</p>
+    <input type="password" name="Password" />
+    
+    <input type="submit" value="Log in" />
+}
+
+<a href="Register" >Registre-se</a>
+

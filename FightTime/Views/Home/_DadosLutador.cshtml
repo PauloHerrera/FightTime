@@ -1,0 +1,16 @@
+﻿@model FightTime.Models.LutadorViewModel
+
+<p> <strong>Nome:</strong> @Model.Nome -  <strong>Apelido: </strong> @Model.Apelido</p>
+
+<p> <strong>Nível:</strong> @Model.Nivel</p>
+<p id="saude_container_@(Model.LutadorId)"> <strong>Vida:</strong> <span id="saude_@(Model.LutadorId)">@Model.Saude</span></p>
+
+<h3 class="text_green" id="resultado_vitoria_@(Model.LutadorId)" style="display: none"> Vitória </h3>
+<h3 class="text_red" id="resultado_derrota_@(Model.LutadorId)" style="display: none"> Derrota </h3>
+
+<h3> Atributos: </h3>
+<ul>
+    <li><strong>Velocidade:</strong> @Model.Velocidade</li>
+    <li><strong>Força:</strong> @Model.Forca</li>
+    <li><strong>Agilidade:</strong> @Model.Agilidade</li>
+</ul>
